@@ -12,7 +12,7 @@ struct info {
     int urgency;    // 급한 정도
 };
 
-// 우선순위를 결정하는 비교 연산자 구조체
+// 우선순위를 결정하는 (비교 연산자) 구조체
 struct cmp {
     bool operator()(const info& child, const info& parent) {
         // 1. 근무 일자가 많은 사람이 우선
@@ -69,14 +69,14 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    // 총 사람 수, 줄의 개수, 데카의 인덱스 입력
+    // 총 사람 수, 줄의 개수, 인덱스 입력
     int n, m, k, d, h;
     cin >> n >> m >> k; 
     
     // m개의 줄을 생성
     vector<queue<info>> lines(m, queue<info>()); 
 
-    // 각 사람의 정보를 입력받아 줄에 추가
+    // 각 사람의 정보를 입력받음.
     for (int i = 0; i < n; i++) {
         // 근무 일수(d), 급한 정도(h) 입력
         cin >> d >> h; 
